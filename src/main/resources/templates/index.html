@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <title>Application</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <style>
+        .center-image {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
 </head>
-<body>
-<div class="container-fluid text-center">
-    <h1>Welcome here</h1>
-    <a class="h2" th:href="@{/users}">Users</a>
-    <a class="h2" th:href="@{/cars}">Cars</a>
+<body style="background-color: rgba(134,223,225,0.6)">
+<div class="container-fluid text-center" style="background-color: cadetblue">
+    <h1>Welcome here!</h1>
+    <h2>You can register yourself and your cars.</h2>
+    <div>
+    <a class="h2" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{/users}">Users</a>
+    </div>
+    <div>
+    <a class="h2" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{/cars}">Cars</a>
+    </div>
+</div>
+<div>
+    <img src="/images/car.jpeg" alt="Car image" class="center-image" style="border-radius: 60px;">
 </div>
 </body>
 </html>

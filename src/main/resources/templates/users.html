@@ -5,11 +5,11 @@
     <title>Manage Users</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
-<body>
-<div class="container-fluid text-center">
-    <div><h2>Manage Users</h2></div>
+<body style="background-color: rgba(134,223,225,0.6)">
+<div class="container-fluid text-center" style="background-color: cadetblue">
+    <div style=" line-height: 1.5; letter-spacing: 2px;"><h2>Manage Users</h2></div>
     <div class="m-2">
-        <a class="h3" th:href="@{/users/new}">Add New User</a>
+        <a class="h3" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{/users/new}">Add New User</a>
     </div>
 
     <div th:if="${message}" class="alert alert-success text-center">
@@ -18,10 +18,9 @@
 
 
     <div>
-        <a class="h2" th:href="@{/cars}">Cars</a>
-        <a class="h2" th:href="@{/}">Vissza</a>
+        <a class="h2" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{/cars}">Cars</a>
         <table class="table table-bordered">
-            <thead class ="thead-dark">
+            <thead style="background-color: rgba(4,61,65,0.6)">
             <tr>
                 <th>ID</th>
                 <th>E-mail</th>
@@ -31,7 +30,7 @@
                 <th></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: rgba(180,255,232,0.6)">
             <th:block th:each="user : ${listUsers}">
                 <tr>
                     <td>[[${user.id}]]</td>
@@ -40,13 +39,14 @@
                     <td>[[${user.lastName}]]</td>
                     <td>[[${user.enabled}]]</td>
                     <td>
-                        <a class="h4 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
-                        <a class="h4" th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
+                        <a class="h4 mr-3" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
+                        <a class="h4" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
                     </td>
                 </tr>
             </th:block>
             </tbody>
         </table>
+        <a class="h2" style="color: #19571d; line-height: 1.5; letter-spacing: 2px;" th:href="@{/}">Vissza</a>
     </div>
 </div>
 </body>
