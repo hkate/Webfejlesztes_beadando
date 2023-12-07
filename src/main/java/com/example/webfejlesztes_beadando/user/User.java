@@ -1,6 +1,10 @@
 package com.example.webfejlesztes_beadando.user;
 
+import com.example.webfejlesztes_beadando.car.Car;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +21,18 @@ public class User {
     private String firstName;
     @Column(length = 45, nullable = false, name="last_name")
     private String lastName;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Car> cars = new ArrayList<>();
+
+    // Getter and setter for cars
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 
     private boolean enabled;
 
